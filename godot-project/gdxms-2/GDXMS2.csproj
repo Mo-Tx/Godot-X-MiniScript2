@@ -1,0 +1,12 @@
+<Project Sdk="Godot.NET.Sdk/4.6.3">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="GodotSharpMiniScript">
+    	     <HintPath>/Data/Projects/Godot-X-MiniScript2/miniscript2/build/cs/miniscript2.dll</HintPath>
+   	</Reference>
+  </ItemGroup>
+</Project>

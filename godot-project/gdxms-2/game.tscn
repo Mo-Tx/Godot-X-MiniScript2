@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cr54053dhbq6t"]
+
+[ext_resource type="Script" uid="uid://dynn8b14vtvc8" path="res://Node2d.cs" id="2_feb5d"]
+
+[node name="Node2D" type="Node2D" unique_id=7059516]
+script = ExtResource("2_feb5d")
+code = "print \"hello world!\""

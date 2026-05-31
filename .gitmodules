@@ -1,0 +1,3 @@
+[submodule "gdxms2-cpp/godot-cpp"]
+	path = gdxms2-cpp/godot-cpp
+	url = https://github.com/godotengine/godot-cpp
