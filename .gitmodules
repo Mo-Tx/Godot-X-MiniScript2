@@ -1,6 +1,8 @@
 [submodule "gdxms2-cpp/godot-cpp"]
 	path = gdxms2-cpp/godot-cpp
 	url = https://github.com/godotengine/godot-cpp/
+	ignore=all
 [submodule "miniscript2"]
 	path = miniscript2
 	url = https://github.com/JoeStrout/miniscript2
+	ignore=all
