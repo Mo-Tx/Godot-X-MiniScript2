@@ -36,21 +36,23 @@ Run the following command to download godot-cpp:
     sys.exit(1)
 
 #ENABLE EXCEPTIONS
-if ARGUMENTS.get("disable_exceptions", None):
+if ARGUMENTS.get("disable_excep9tions", None):
     raise ValueError("NumDot does not currently support compiling without exceptions.")
 ARGUMENTS["disable_exceptions"] = False
 
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
-env.Append(CCPATH=["src/", "../miniscript2/cpp/core/", "../miniscript2/cpp/editline/"])
-env.Append(CPPPATH=["src/", "../miniscript2/cpp/core/", "../miniscript2/cpp/editline/", "../miniscript2/generated/"])
+env.Append(CCPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/"])
+env.Append(CPPPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/", "../miniscript2/generated/"])
 
-sources = Glob("src/*.cpp") + Glob("src/*.cc") + Glob("src/*.c")
+#SOURCE FILES
+sources = Glob("src/*.c") + Glob("src/*.cc") + Glob("src/*.cxx") + Glob("src/*.cpp")
 
-sources += Glob("../miniscript2/cpp/core/*.cpp") + Glob("../miniscript2/cpp/core/*.c")
-sources += Glob("../miniscript2/cpp/editline/*.cpp") + Glob("../miniscript2/cpp/editline/*.c")
-sources += Glob("../miniscript2/generated/*.cpp",
-    exclude=["../miniscript2/generated/App.g.cpp", "../miniscript2/generated/test_*.cpp"])
+##MINISCRIPT FILES
+sources += Glob("../miniscript2/cpp/core/*.c") + Glob("../miniscript2/cpp/core/*.cpp")
+sources += Glob("../miniscript2/cpp/editline/*.c") + Glob("../miniscript2/cpp/editline/*.cpp")
+sources += Glob("../miniscript2/generated/*.c") + Glob("../miniscript2/generated/*.cpp",
+    exclude=["../miniscript2/generated/App.g.cpp", "../miniscript2/generated/ShellIntrinsics.g.cpp"])
 
 
 if env["target"] in ["editor", "template_debug"]:

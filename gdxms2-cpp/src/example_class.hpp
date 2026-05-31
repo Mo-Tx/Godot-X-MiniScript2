@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Interpreter.g.h"
+#include <godot_cpp/classes/ref_counted.hpp>
+#include <godot_cpp/classes/wrapped.hpp>
+#include <godot_cpp/variant/variant.hpp>
 
-#include "godot_cpp/classes/ref_counted.hpp"
-#include "godot_cpp/classes/wrapped.hpp"
-#include "godot_cpp/variant/variant.hpp"
+#include <Interpreter.g.h>
 
 using namespace godot;
 
@@ -21,5 +21,5 @@ public:
 	ExampleClass();
 	~ExampleClass() override = default;
 
-	void print_type(const Variant &p_variant) const;
+	//void print_type(const Variant &p_variant) const;
 };
