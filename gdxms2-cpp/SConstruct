@@ -42,14 +42,15 @@ ARGUMENTS["disable_exceptions"] = False
 
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
-env.Append(CCPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/"])
-env.Append(CPPPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/", "../miniscript2/generated/"])
+env.Append(CCPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/", "../miniscript2/cpp/"])
+env.Append(CPPPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/", "../miniscript2/generated/", "../miniscript2/cpp/"])
 
 #SOURCE FILES
 sources = Glob("src/*.c") + Glob("src/*.cc") + Glob("src/*.cxx") + Glob("src/*.cpp")
 
 ##MINISCRIPT FILES
-sources += Glob("../miniscript2/cpp/core/*.c") + Glob("../miniscript2/cpp/core/*.cpp")
+sources += Glob("../miniscript2/cpp/core/*.c") + Glob("../miniscript2/cpp/core/*.cpp",
+    exclude=["../miniscript2/cpp/core/test_simple.cpp"])
 sources += Glob("../miniscript2/cpp/editline/*.c") + Glob("../miniscript2/cpp/editline/*.cpp")
 sources += Glob("../miniscript2/generated/*.c") + Glob("../miniscript2/generated/*.cpp",
     exclude=["../miniscript2/generated/App.g.cpp", "../miniscript2/generated/ShellIntrinsics.g.cpp"])
