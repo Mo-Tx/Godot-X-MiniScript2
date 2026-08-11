@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/cmake_install.cmake",
-		"/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/godot-cpp/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

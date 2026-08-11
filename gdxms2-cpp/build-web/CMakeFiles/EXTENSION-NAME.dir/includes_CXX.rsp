@@ -1,1 +1,0 @@
--isystem "/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/godot-cpp/include" -isystem "/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-web/godot-cpp/gen/include" -isystem "/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/godot-cpp/gdextension"

@@ -1,2 +1,0 @@
-/home/moez/emsdk/upstream/emscripten/emar qc EXTENSION-NAME.web.template_debug.wasm32.a "CMakeFiles/EXTENSION-NAME.dir/src/register_types.cpp.o" "CMakeFiles/EXTENSION-NAME.dir/src/example_class.cpp.o" "CMakeFiles/EXTENSION-NAME.dir/gen/doc_source.cpp.o"
-/home/moez/emsdk/upstream/emscripten/emranlib EXTENSION-NAME.web.template_debug.wasm32.a

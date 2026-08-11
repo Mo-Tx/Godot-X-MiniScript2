@@ -1,8 +1,0 @@
-/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/CMakeFiles/EXTENSION-NAME.dir
-/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/CMakeFiles/generate_doc_source.dir
-/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/CMakeFiles/edit_cache.dir
-/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/CMakeFiles/rebuild_cache.dir
-/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/godot-cpp/CMakeFiles/generate_bindings.dir
-/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/godot-cpp/CMakeFiles/godot-cpp.dir
-/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/godot-cpp/CMakeFiles/edit_cache.dir
-/Data/Projects/Godot-X-MiniScript2/gdxms2-cpp/build-linux/godot-cpp/CMakeFiles/rebuild_cache.dir
