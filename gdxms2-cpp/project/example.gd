@@ -2,5 +2,9 @@ extends Node
 
 
 func _ready() -> void:
-	var _example : ExampleClass
-	_example = ExampleClass.new()
+	Interpreter.init_miniscript()
+	var interp = Interpreter.new()
+	interp.source_code = """print "hello world" """
+	interp.compile()
+	interp.run_until_done()
+	
