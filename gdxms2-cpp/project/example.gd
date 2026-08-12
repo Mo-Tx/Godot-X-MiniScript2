@@ -11,7 +11,7 @@ func _ready() -> void:
 	print("GDScript result:", i)
 	
 	
-	Interpreter.init_miniscript()
+	Interpreter.init_miniscript(print, push_error)
 	var interp = Interpreter.create(
 	"""
 	i = 0

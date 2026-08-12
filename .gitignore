@@ -4,4 +4,10 @@
 *.kdevelop.pcs
 *.os
 *.o
-gdxms2-cpp/project/export/
+*.wasm
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+gdxms2-cpp/project/export/*

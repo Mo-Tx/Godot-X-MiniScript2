@@ -4,6 +4,7 @@
 	"enabled_classes": [
 		"RefCounted",
 		"Variant",
-		"ClassDB"
+		"ClassDB",
+		"OS"
 	]
 }

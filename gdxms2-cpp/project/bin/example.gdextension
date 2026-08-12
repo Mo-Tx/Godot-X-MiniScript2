@@ -45,3 +45,7 @@ web.wasm32.single.debug = "./web/libEXTENSION-NAME.web.template_debug.wasm32.not
 web.wasm32.double.debug = "./web/libEXTENSION-NAME.web.template_debug.wasm32.double.nothreads.wasm"
 web.wasm32.single.release = "./web/libEXTENSION-NAME.web.template_release.wasm32.nothreads.wasm"
 web.wasm32.double.release = "./web/libEXTENSION-NAME.web.template_release.wasm32.double.nothreads.wasm"
+web.wasm32.threads.single.debug = "./web/libEXTENSION-NAME.web.template_debug.wasm32.wasm"
+web.wasm32.threads.double.debug = "./web/libEXTENSION-NAME.web.template_debug.wasm32.double.wasm"
+web.wasm32.threads.single.release = "./web/libEXTENSION-NAME.web.template_release.wasm32.wasm"
+web.wasm32.threads.double.release = "./web/libEXTENSION-NAME.web.template_release.wasm32.double.wasm"
