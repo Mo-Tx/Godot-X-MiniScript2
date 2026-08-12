@@ -50,11 +50,16 @@ env.Append(CPPPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/", 
 sources = Glob("src/*.c") + Glob("src/*.cc") + Glob("src/*.cxx") + Glob("src/*.cpp")
 
 ##MINISCRIPT FILES
-sources += Glob("../miniscript2/cpp/core/*.c") + Glob("../miniscript2/cpp/core/*.cpp",
+miniscript2_sources = Glob("../miniscript2/cpp/core/*.c") + Glob("../miniscript2/cpp/core/*.cpp",
     exclude=["../miniscript2/cpp/core/test_simple.cpp"])
-sources += Glob("../miniscript2/cpp/editline/*.c") + Glob("../miniscript2/cpp/editline/*.cpp")
-sources += Glob("../miniscript2/generated/*.c") + Glob("../miniscript2/generated/*.cpp",
+
+miniscript2_sources += Glob("../miniscript2/cpp/editline/*.c") + Glob("../miniscript2/cpp/editline/*.cpp")
+
+miniscript2_sources += Glob("../miniscript2/generated/*.c") + Glob("../miniscript2/generated/*.cpp",
     exclude=["../miniscript2/generated/App.g.cpp", "../miniscript2/generated/ShellIntrinsics.g.cpp"])
+
+
+miniscript2 = env.StaticLibrary("miniscript2", source=miniscript2_sources)
 
 
 if env["target"] in ["editor", "template_debug"]:
@@ -98,6 +103,7 @@ lib_filename = "{}{}{}{}".format(env.subst('$SHLIBPREFIX'), libname, suffix, env
 library = env.SharedLibrary(
     "bin/{}/{}".format(env['platform'], lib_filename),
     source=sources,
+    LIBS=[miniscript2]
 )
 
 copy = env.Install("{}/bin/{}/".format(projectdir, env["platform"]), library)

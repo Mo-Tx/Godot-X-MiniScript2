@@ -6,27 +6,26 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=5
+config_version=4
 
 [application]
 
-config/name="GDXMS2"
-run/main_scene="uid://cr54053dhbq6t"
-config/features=PackedStringArray("3.0", "")
-config/icon="res://icon.svg"
+config/name="Project"
+run/main_scene="res://game.tscn"
+config/icon="res://icon.png"
 
-[autoload]
+[gui]
 
-Game="*uid://c8ubs47bef4qy"
+common/drop_mouse_on_gui_input_disabled=true
 
-[dotnet]
+[mono]
 
-project/assembly_name="GDXMS2"
+project/assembly_name="Project"
 
 [physics]
 
-3d/physics_engine=""
+common/enable_pause_aware_picking=true
 
 [rendering]
 
-rendering_device/driver.windows=""
+environment/default_environment="res://default_env.tres"

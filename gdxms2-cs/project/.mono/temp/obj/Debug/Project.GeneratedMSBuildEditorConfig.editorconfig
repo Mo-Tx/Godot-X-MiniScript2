@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = Project
+build_property.ProjectDir = /Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 
