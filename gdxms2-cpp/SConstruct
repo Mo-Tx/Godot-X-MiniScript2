@@ -16,7 +16,7 @@ localEnv = Environment(tools=["default"], PLATFORM="")
 # Modify the example file as needed and uncomment the line below or
 # manually specify the build_profile parameter when running SCons.
 
-# localEnv["build_profile"] = "build_profile.json"
+#localEnv["build_profile"] = "build_profile.json"
 
 customs = ["custom.py"]
 customs = [os.path.abspath(path) for path in customs]
@@ -35,17 +35,18 @@ Run the following command to download godot-cpp:
     git submodule update --init --recursive""")
     sys.exit(1)
 
-#ENABLE EXCEPTIONS
-if ARGUMENTS.get("disable_excep9tions", None):
-    raise ValueError("NumDot does not currently support compiling without exceptions.")
+##FORCIBLY ENABLE EXCEPTIONS
+if ARGUMENTS.get("disable_exceptions", None):
+    raise ValueError("GDXMS2 does not currently support compiling without exceptions.")
 ARGUMENTS["disable_exceptions"] = False
 
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
-env.Append(CCPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/", "../miniscript2/cpp/"])
+##INCLUDE PATHS
+#env.Append(CCPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/", "../miniscript2/cpp/"])
 env.Append(CPPPATH=["../miniscript2/cpp/core/", "../miniscript2/cpp/editline/", "../miniscript2/generated/", "../miniscript2/cpp/"])
 
-#SOURCE FILES
+##SOURCE FILES
 sources = Glob("src/*.c") + Glob("src/*.cc") + Glob("src/*.cxx") + Glob("src/*.cpp")
 
 ##MINISCRIPT FILES
@@ -62,6 +63,31 @@ if env["target"] in ["editor", "template_debug"]:
         sources.append(doc_data)
     except AttributeError:
         print("Not including class reference as we're targeting a pre-4.3 baseline.")
+##handle computed goto based on compiler
+#Clang
+if "clang" in env["CXX"]:
+    print("Using computed goto with Clang...")
+    env.Append(CPPDEFINES=[('VM_USE_COMPUTED_GOTO', 1)])
+
+#GCC
+elif "g++" in env["CXX"]:
+    print("Using computed goto with GCC...")
+    env.Append(CPPDEFINES=[('VM_USE_COMPUTED_GOTO', 1)])
+
+#MSVC
+elif "cl" in env["CXX"]:
+    print("Not using computed goto with MSVC...")
+    env.Append(CPPDEFINES=[('VM_USE_COMPUTED_GOTO', 0)])
+
+#Emscripten
+elif "em++" in env["CXX"]:
+    print("Not using computed goto with Emscripten...")
+    env.Append(CPPDEFINES=[('VM_USE_COMPUTED_GOTO', 0)])
+
+#Default
+else:
+    print("Not using computed goto with unknown compiler...")
+    env.Append(CPPDEFINES=[('VM_USE_COMPUTED_GOTO', 0)])
 
 # .dev doesn't inhibit compatibility, so we don't need to key it.
 # .universal just means "compatible with all relevant arches" so we don't need to key it.

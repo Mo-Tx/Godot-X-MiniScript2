@@ -6,7 +6,7 @@
 
 #include <miniscript.h>
 
-#include <string>
+//#include <string>
 
 using namespace godot;
 
@@ -15,22 +15,26 @@ class Interpreter : public RefCounted {
 
 private:
 	MiniScript::Interpreter interp;
-	std::string source_code;
+	//std::string source_code;
 
 protected:
 	static void _bind_methods();
 
 public:
-	Interpreter();
+	Interpreter(godot::String source_code = "");
 	~Interpreter() override = default;
 
 	static void init_miniscript();
+	static Interpreter* create(godot::String source_code);
 
+	void init(godot::String source_code);
+
+	void reset(godot::String source_code);
 	void compile();
-	void run_until_done(double time_limit, bool return_early);
-;
+	void run_until_done(double time_limit = 60.0, bool return_early = true);
+#if 0
 	godot::String get_source_code() const;
 	void set_source_code(const godot::String value);
-
+#endif
 	//void print_type(const Variant &p_variant) const;
 };
