@@ -1,0 +1,10 @@
+<Project Sdk="Godot.NET.Sdk/3.3.0">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="GodotSharpMiniScript">
+    	     <HintPath>../../miniscript2/build/cs/miniscript2.dll</HintPath>
+   	</Reference>
+  </ItemGroup>
+</Project>

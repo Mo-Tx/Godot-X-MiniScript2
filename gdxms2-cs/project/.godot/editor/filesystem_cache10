@@ -1,0 +1,6 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1786710570
+default_env.tres::Environment::-1::1786710481::0::1::::<><><>0<>0<><>::
+game.tscn::PackedScene::1252268461018910811::1786710481::0::1::::<><><>0<>0<><>::uid://c073rq2fem8ht::::res://Node2D.cs
+icon.png::CompressedTexture2D::7829010992195114734::1786710481::1786710706::1::::<><><>0<>0<>e3e6436a53f1a443152cccd4c985d925<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+Node2D.cs::CSharpScript::6595353863077122821::1786710481::0::1::::<>Node2D<><>0<>0<><>::

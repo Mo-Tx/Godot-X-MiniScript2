@@ -1,0 +1,16 @@
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/Project.csproj.AssemblyReference.cache
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/Project.GeneratedMSBuildEditorConfig.editorconfig
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/Project.AssemblyInfoInputs.cache
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/Project.AssemblyInfo.cs
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/Project.csproj.CoreCompileInputs.cache
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/Project.sourcelink.json
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/bin/Debug/Project.deps.json
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/bin/Debug/Project.dll
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/bin/Debug/Project.pdb
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/bin/Debug/miniscript2.dll
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/bin/Debug/miniscript2.pdb
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/Project.csproj.Up2Date
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/Project.dll
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/refint/Project.dll
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/Project.pdb
+/Data/Projects/Godot-X-MiniScript2/gdxms2-cs/project/.godot/mono/temp/obj/Debug/ref/Project.dll

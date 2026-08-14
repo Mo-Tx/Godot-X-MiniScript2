@@ -61,6 +61,9 @@ miniscript2_sources += Glob("../miniscript2/generated/*.c") + Glob("../miniscrip
 
 miniscript2 = env.StaticLibrary("miniscript2", source=miniscript2_sources)
 
+#add the miniscript2 library
+env.Append(LIBS=[miniscript2])
+
 
 if env["target"] in ["editor", "template_debug"]:
     try:
@@ -102,8 +105,7 @@ lib_filename = "{}{}{}{}".format(env.subst('$SHLIBPREFIX'), libname, suffix, env
 
 library = env.SharedLibrary(
     "bin/{}/{}".format(env['platform'], lib_filename),
-    source=sources,
-    LIBS=[miniscript2]
+    source=sources
 )
 
 copy = env.Install("{}/bin/{}/".format(projectdir, env["platform"]), library)
