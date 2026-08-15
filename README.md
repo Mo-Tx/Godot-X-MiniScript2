@@ -32,13 +32,13 @@ This project is in early active development. Features will roll out gradually ov
 
 #### Dependencies
 - **SCons** build system
-- **C/C++ compiler** (Clang or GCC recommended; cross-compilation supported)
-- **Emscripten** (required if targeting Web/Wasm—use the version recommended by your Godot release)
+- **a C/C++ compiler** (Clang or GCC recommended; cross-compilation supported)
+- **Optional: Emscripten** (required if targeting Web/Wasm—use the version recommended by your Godot release)
 
 #### Build Command
 
 ```bash
-scons <scons arguments>
+scons
 ```
 
 #### References
@@ -61,10 +61,10 @@ scons <scons arguments>
 
 ## Contributing
 
-Pull requests are welcome! Formal code conventions are still being defined, but reasonable contributions and bug fixes are generally accepted.
+Pull requests are welcome! Formal code conventions are not yet defined, but reasonable contributions and bug fixes are generally accepted.
 
 ---
 
 ## License
 
-Licensed under the **MIT License**. Includes attribution to [Godot](https://github.com/godotengine/godot), [godot-cpp](https://github.com/godotengine/godot-cpp), and [MiniScript2](https://github.com/joestrout/miniscript2).
+Licensed under the **MIT License**—with attribution to [Godot](https://github.com/godotengine/godot), [godot-cpp](https://github.com/godotengine/godot-cpp), and [MiniScript2](https://github.com/joestrout/miniscript2).
