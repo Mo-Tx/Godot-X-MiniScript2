@@ -1,27 +1,30 @@
+##example node script using the "Interpreter" class
 extends Node
 
+@export var test_number : int
 
-func _ready() -> void:
-	var i : int = 0
-	var start_time := Time.get_ticks_msec()
-	while true:
-		i += 1
-		if Time.get_ticks_msec()>=start_time+1000: break
-	#end while
-	print("GDScript result:", i)
-	
-	
+func _ready() -> void:	
+	#Init all global MiniScript components(GC, constants, error types, ...) and set the stdout and stderr
+	#In this case, they are the defaule godot stdout(print and push_error); but any method that takes a string will work
 	Interpreter.init_miniscript(print, push_error)
+	#create an interpreter object with its initial code set to the desired source code(to avoid reseting the interpreter after creation)
 	var interp = Interpreter.create(
+	#here we forcibly injected the variable in the source code since we don't have an I/O or value sharing API yet
+	"test_number="+str(test_number)+
 	"""
-	i = 0
-	while true
-		i += 1
-		if time >= 1 then break
-	end while
-	print "MiniScript result: "+i
+	factorial=function(x)
+		if x==0 or x==1 or x==null then return 1
+		mult=1
+		for i in range(x, 2)
+			mult*=i
+		end for
+		return mult
+	end function
+	print factorial(test_number)
 	""")
+	#compile the interpreter's source code
 	interp.compile()
-	interp.run_until_done(2.0)
+	#run it with a 2-second time limit and with early returns (read MiniScript docs for more details)
+	interp.run_until_done(2.0, true)
 
 	
