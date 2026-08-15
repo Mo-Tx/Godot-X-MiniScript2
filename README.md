@@ -67,4 +67,4 @@ Pull requests are welcome! Formal code conventions are not yet defined, but reas
 
 ## License
 
-Licensed under the **MIT License**—with attribution to [Godot](https://github.com/godotengine/godot), [godot-cpp](https://github.com/godotengine/godot-cpp), and [MiniScript2](https://github.com/joestrout/miniscript2).
+Licensed under the **MIT License**—with attribution to [godot-cpp](https://github.com/godotengine/godot-cpp), and [MiniScript2](https://github.com/joestrout/miniscript2).
