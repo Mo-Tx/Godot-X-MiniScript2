@@ -35,7 +35,7 @@ This project is in early active development. Features will roll out gradually ov
 - **C/C++ compiler** (Clang or GCC recommended; cross-compilation supported)
 - **Emscripten** (required if targeting Web/Wasm—use the version recommended by your Godot release)
 
-# Build Command
+#### Build Command
 
 ```bash
 scons <scons arguments>
@@ -53,7 +53,7 @@ scons <scons arguments>
 
 ---
 
-# Build Command
+#### Build Command
 
 ```bash
 # Use Godot Mono's built-in C# / MSBuild system.
