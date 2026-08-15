@@ -43,7 +43,7 @@ scons <scons arguments>
 
 #### References
 - [GDExtension Documentation](https://docs.godotengine.org/en/4.4/tutorials/scripting/gdextension/index.html)
-- [Godot Engine Development Documentation](https://docs.godotengine.org/en/4.4/contributing/development/index.html#buildsystem-and-work-environment) — *Includes a guide on configuring an IDE and documentation.*
+- [Godot Engine Development Documentation](https://docs.godotengine.org/en/4.4/contributing/development/index.html#buildsystem-and-work-environment) — *Includes a guide on configuring an IDE and scons documentation.*
 
 ### C# (GodotSharp)
 
