@@ -1,49 +1,70 @@
-# MoTrix/Godot-X-MiniScript2 (GDXMS2)
+# MoTrix / Godot-X-MiniScript2 (GDXMS2)
 
-An updated and improved version of the unfinished Godot-X-MiniScript wrapper, a MiniScript wrapper for Godot. Now based on newer and better MiniScript2([here](https://github.com/JoeStrout/miniscript2/tree/3579b47cbf616e1c22badf2bc1b87ed25fdd6359)) and optimized for web.
+An updated and improved version of the unfinished Godot-X-MiniScript wrapper, bridging MiniScript with Godot. This version is built on [MiniScript2](https://github.com/JoeStrout/miniscript2/tree/3579b47cbf616e1c22badf2bc1b87ed25fdd6359) and optimized for web exports.
 
-# Progress:
-This project is still under development in its very early stages. There are a lot of planned features expected to eventaully land in a couple of years (I am busy with life, and I'm the only one working on this)
+---
 
-## Plans for the C++ version([./gdxms2-cpp](https://github.com/Mo-Tx/Godot-X-MiniScript2/edit/main/gdxms2-cpp)) (GDExtnesion-based)
-| Planned                    | In Progress                    | Done                         |  
-|----------------------------|--------------------------------|------------------------------|  
-| - Add conversion functions | - Add polished README          | - Add working first build    |  
-| - Add intrinsic API        | - Post the first dev.to blog   | - Add interepreter API       |  
-| - Add global value API     | - Add class reference docs     | - Run MiniScript code on web |  
-| - Add misc. APIs           | - Add REPL API                 | - Bind API to GDScript       |  
+## Progress
 
-## Plans for the C# version([./gdxms2-cs](https://github.com/Mo-Tx/Godot-X-MiniScript2/edit/main/gdxms2-cs)) (GodotSharp-based) 
-#### (DOES _NOT_ SUPPORT WEB EXPORT WITHOUT 3RD-PARTY TOOLS)
-| Planned                    | In Progress                    | Done                         | 
-|----------------------------|--------------------------------|------------------------------|
-| - Currently none           | - Nothing                      | - Add working first build    |
+This project is in early active development. Features will roll out gradually over time.
 
-# Building:
-## C++:
-### Dependencies:
-- Scons build system
-- A C/C++ compiler for your platform (Clang or GCC are recommended, others are supported, cross-compilation also supported if the compiler has it)
-  
-  **Note**: for targeting the web(wasm), you need to use Emscripten with the recommended compiler version for your Godot version
+### C++ Version (GDExtension) — [`./gdxms2-cpp`](https://github.com/Mo-Tx/Godot-X-MiniScript2/tree/main/gdxms2-cpp)
 
-### Build command:
-`$ scons <scons arguments>`
+| Planned | In Progress | Done |
+| :--- | :--- | :--- |
+| Conversion functions | Polished README | Working first build |
+| Intrinsic API | dev.to blog post | Interpreter API |
+| Global value API | Class reference docs | Run MiniScript code on web |
+| Miscellaneous APIs | REPL API | Bind API to GDScript |
 
-**See:**
-- [GDExtension documentation](https://docs.godotengine.org/en/4.4/tutorials/scripting/gdextension/index.html)
-- [Godot Engine development doccumentation](https://docs.godotengine.org/en/4.4/contributing/development/index.html#buildsystem-and-work-environment) (Includes a guide on configuring an IDE and documentation 
+### C# Version (GodotSharp) — [`./gdxms2-cs`](https://github.com/Mo-Tx/Godot-X-MiniScript2/tree/main/gdxms2-cs)
+> **Note:** Direct web export is not supported without 3rd-party tools.
 
-## C++:
-### Dependencies:
-- .NET SDK 6.0 or newer (whichever one MiniScript2 uses)
--  Godot Engine 4 Mono (Latest version)
+| Planned | In Progress | Done |
+| :--- | :--- | :--- |
+| TBD | None | Working first build |
 
-### Build command:
-**_Use Godot Mono's C# MSBuild build system_**
+---
 
-# Contribution:
-Contributions are welcome but there isn't really a standard for how to write the code yet. So it's mainly going to be arbitrary when deciding to accept a PR or not--but it will likely be accepted.
+## Building
 
-# License:
-This project is licensed under the MIT license with attribution to [godot](https://github.com/godotengine/godot), [godot-cpp](https://github.com/godotengine/godot-cpp) and [miniscript2](https://github.com/joestrout/miniscript2)
+### C++ (GDExtension)
+
+#### Dependencies
+- **SCons** build system
+- **C/C++ compiler** (Clang or GCC recommended; cross-compilation supported)
+- **Emscripten** (required if targeting Web/Wasm—use the version recommended by your Godot release)
+
+# Build Command
+
+```bash
+scons <scons arguments>
+```
+
+#### References
+- [GDExtension Documentation](https://docs.godotengine.org/en/4.4/tutorials/scripting/gdextension/index.html)
+- [Godot Engine Development Documentation](https://docs.godotengine.org/en/4.4/contributing/development/index.html#buildsystem-and-work-environment) — *Includes a guide on configuring an IDE and documentation.*
+
+### C# (GodotSharp)
+
+#### Dependencies
+- **.NET SDK 6.0+** (matching MiniScript2 requirements)
+- **Godot Engine 4 (Mono/.NET build)**
+
+---
+
+# Build Command
+
+```bash
+# Use Godot Mono's built-in C# / MSBuild system.
+```
+
+## Contributing
+
+Pull requests are welcome! Formal code conventions are still being defined, but reasonable contributions and bug fixes are generally accepted.
+
+---
+
+## License
+
+Licensed under the **MIT License**. Includes attribution to [Godot](https://github.com/godotengine/godot), [godot-cpp](https://github.com/godotengine/godot-cpp), and [MiniScript2](https://github.com/joestrout/miniscript2).
