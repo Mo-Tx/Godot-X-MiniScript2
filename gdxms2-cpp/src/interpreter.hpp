@@ -13,8 +13,8 @@ class Interpreter : public RefCounted {
 
 private:
 	MiniScript::Interpreter interp;
-	static godot::Callable* _standard_output;
-	static godot::Callable* _error_output;
+	static godot::Callable *_standard_output;
+	static godot::Callable *_error_output;
 	//std::string source_code;
 
 protected:
@@ -25,7 +25,7 @@ public:
 	~Interpreter() override = default;
 
 	static void init_miniscript(const godot::Callable standard_output = godot::Callable(), const godot::Callable error_output = godot::Callable());
-	static Interpreter* create(const godot::String source_code = "");
+	static Interpreter *create(const godot::String source_code = "");
 
 	static void set_standard_output(const godot::Callable standard_output = Callable());
 	static void set_error_output(const godot::Callable error_output = Callable());

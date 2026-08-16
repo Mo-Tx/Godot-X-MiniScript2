@@ -3,9 +3,8 @@
 
 #include "interpreter.hpp"
 
-Callable* Interpreter::_standard_output = nullptr;
-Callable* Interpreter::_error_output = nullptr;
-
+Callable *Interpreter::_standard_output = nullptr;
+Callable *Interpreter::_error_output = nullptr;
 
 void Interpreter::_bind_methods() {
 	//### FUNCTIONS ###//
@@ -21,7 +20,6 @@ void Interpreter::_bind_methods() {
 	godot::ClassDB::bind_method(D_METHOD("init", "source_code"), &Interpreter::init, DEFVAL(""));
 	godot::ClassDB::bind_method(D_METHOD("compile"), &Interpreter::compile);
 	godot::ClassDB::bind_method(D_METHOD("run_until_done", "time_limit", "return_early"), &Interpreter::run_until_done, DEFVAL(60.0), DEFVAL(true));
-
 
 #if 0
 	//### GETTERS/SETTERS ###//
@@ -42,11 +40,9 @@ Interpreter::Interpreter(godot::String source_code) {
 	init(source_code);
 }
 
-
 /*### FUNCTIONS ###*/
 /*  STATIC */
-void Interpreter::init_miniscript(godot::Callable standard_output, godot::Callable error_output)
-{
+void Interpreter::init_miniscript(godot::Callable standard_output, godot::Callable error_output) {
 	MiniScript::value_init_constants();
 	MiniScript::GCManager::Init();
 	MiniScript::ErrorTypes::Init();
@@ -55,51 +51,43 @@ void Interpreter::init_miniscript(godot::Callable standard_output, godot::Callab
 	Interpreter::_error_output = new Callable(error_output);
 }
 
-Interpreter* Interpreter::create(godot::String source_code)
-{
+Interpreter *Interpreter::create(godot::String source_code) {
 	return memnew(Interpreter(source_code));
 }
 
-void Interpreter::set_standard_output(godot::Callable standard_output)
-{
+void Interpreter::set_standard_output(godot::Callable standard_output) {
 	*_standard_output = standard_output;
 }
 
-void Interpreter::set_error_output(godot::Callable error_output)
-{
+void Interpreter::set_error_output(godot::Callable error_output) {
 	*_error_output = error_output;
 }
-
 
 /*  MEMBER */
 void Interpreter::init(godot::String source_code) {
 	//source_code = code.utf8();
 	interp = MiniScript::Interpreter::New(
-		//source
-		MiniScript::String(source_code.utf8()),
+			//source
+			MiniScript::String(source_code.utf8()),
 
-		//standardOutput
-		[](MiniScript::String str, MiniScript::Boolean) -> void {
-			if (_standard_output) _standard_output->call(godot::String(str.c_str()));
-			//godot::print_line(godot::String(str.c_str()));
+			//standardOutput
+			[](MiniScript::String str, MiniScript::Boolean) -> void {
+				if (_standard_output)
+					_standard_output->call(godot::String(str.c_str()));
+				//godot::print_line(godot::String(str.c_str()));
+			},
 
-		},
-
-		//errorOutput
-		[](MiniScript::String str, MiniScript::Boolean) -> void {
-			if (_error_output) _error_output->call(godot::String(str.c_str()));
-			//godot::print_error(godot::String(str.c_str()));
-
-		}
-	);
-
+			//errorOutput
+			[](MiniScript::String str, MiniScript::Boolean) -> void {
+				if (_error_output)
+					_error_output->call(godot::String(str.c_str()));
+				//godot::print_error(godot::String(str.c_str()));
+			});
 }
 
-void Interpreter::reset(godot::String source_code)
-{
+void Interpreter::reset(godot::String source_code) {
 	interp.Reset(MiniScript::String(source_code.utf8()));
 }
-
 
 void Interpreter::compile() {
 	interp.Compile();
@@ -108,7 +96,6 @@ void Interpreter::compile() {
 void Interpreter::run_until_done(double time_limit, bool return_early) {
 	interp.RunUntilDone(time_limit, return_early);
 }
-
 
 /*### GETTERS/SETTERS ###*/
 #if 0
@@ -123,7 +110,6 @@ void Interpreter::set_source_code(const godot::String value) {
 	interp.Reset(source_code.c_str());
 }
 #endif
-
 
 /*### UNUSED ###*/
 /*void Interpreter::print_type(const Variant &p_variant) const {

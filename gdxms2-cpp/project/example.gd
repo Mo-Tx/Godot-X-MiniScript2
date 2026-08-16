@@ -12,7 +12,7 @@ func _ready() -> void:
 	#here we forcibly injected the variable in the source code since we don't have an I/O or value sharing API yet
 	"test_number="+str(test_number)+
 	"""
-	factorial=function(x)
+	factorial=funcion(x)
 		if x==0 or x==1 or x==null then return 1
 		mult=1
 		for i in range(x, 2)
