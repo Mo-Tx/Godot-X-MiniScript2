@@ -4,4 +4,4 @@
 
 [node name="Node" type="Node" unique_id=1931659725]
 script = ExtResource("1_jdh55")
-test_number = 3
+test_number = 5

@@ -1,3 +1,13 @@
+---
+id: 5e1d452a-d614-44ec-b831-1c551feb0233
+title: README
+tags: []
+pinned: false
+created: 2026-08-15T14:38:27.300+00:00
+modified: 2026-08-19T16:17:24.924439746+00:00
+---
+# README
+
 # MoTrix / Godot-X-MiniScript2 (GDXMS2)
 
 An updated and improved version of the unfinished Godot-X-MiniScript wrapper, bridging MiniScript with Godot. This version is built on [MiniScript2](https://github.com/JoeStrout/miniscript2/tree/3579b47cbf616e1c22badf2bc1b87ed25fdd6359) and optimized for web exports.
@@ -8,20 +18,21 @@ An updated and improved version of the unfinished Godot-X-MiniScript wrapper, br
 
 This project is in early active development. Features will roll out gradually over time.
 
-### C++ Version (GDExtension) — [`./gdxms2-cpp`](https://github.com/Mo-Tx/Godot-X-MiniScript2/tree/main/gdxms2-cpp)
+### C++ Version (GDExtension) — `./gdxms2-cpp`
 
 | Planned | In Progress | Done |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | Conversion functions | Polished README | Working first build |
 | Intrinsic API | dev.to blog post | Interpreter API |
 | Global value API | Class reference docs | Run MiniScript code on web |
 | Miscellaneous APIs | REPL API | Bind API to GDScript |
 
-### C# Version (GodotSharp) — [`./gdxms2-cs`](https://github.com/Mo-Tx/Godot-X-MiniScript2/tree/main/gdxms2-cs)
+### C# Version (GodotSharp) — `./gdxms2-cs`
+
 > **Note:** Direct web export is not supported without 3rd-party tools.
 
 | Planned | In Progress | Done |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | TBD | None | Working first build |
 
 ---
@@ -31,6 +42,7 @@ This project is in early active development. Features will roll out gradually ov
 ### C++ (GDExtension)
 
 #### Dependencies
+
 - **SCons** build system
 - **a C/C++ compiler** (Clang or GCC recommended; cross-compilation supported)
 - **Optional: Emscripten** (required if targeting Web/Wasm—use the version recommended by your Godot release)
@@ -42,12 +54,14 @@ scons
 ```
 
 #### References
+
 - [GDExtension Documentation](https://docs.godotengine.org/en/4.4/tutorials/scripting/gdextension/index.html)
 - [Godot Engine Development Documentation](https://docs.godotengine.org/en/4.4/contributing/development/index.html#buildsystem-and-work-environment) — *Includes a guide on configuring an IDE and scons documentation.*
 
 ### C# (GodotSharp)
 
 #### Dependencies
+
 - **.NET SDK 6.0+** (matching MiniScript2 requirements)
 - **Godot Engine 4 (Mono/.NET build)**
 
