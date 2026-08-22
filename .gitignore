@@ -11,3 +11,4 @@
 *.a
 *.lib
 gdxms2-cpp/project/export/*
+helixnotes/*

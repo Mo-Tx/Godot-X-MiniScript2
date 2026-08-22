@@ -1,7 +1,9 @@
-#ifndef EXAMPLE_REGISTER_TYPES_H
-#define EXAMPLE_REGISTER_TYPES_H
+// register_types.hh
+
+#ifndef REGISTER_TYPES_HH
+#define REGISTER_TYPES_HH
 
 void initialize_gdextension_types();
 void uninitialize_gdextension_types();
 
-#endif // EXAMPLE_REGISTER_TYPES_H
+#endif // REGISTER_TYPES_HH
